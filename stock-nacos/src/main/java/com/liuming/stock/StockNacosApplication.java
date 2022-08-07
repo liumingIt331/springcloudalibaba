@@ -1,12 +1,12 @@
-package com.liuming.store;
+package com.liuming.stock;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StockApplication {
+public class StockNacosApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(com.liuming.stock.StockApplication.class, args);
+        SpringApplication.run(StockNacosApplication.class, args);
     }
 }

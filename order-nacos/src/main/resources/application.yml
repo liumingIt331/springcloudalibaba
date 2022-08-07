@@ -1,0 +1,21 @@
+server:
+  port: 8020
+
+spring:
+  application:
+    name: order-nacos
+  cloud:
+    nacos:
+      server-addr: 10.10.10.176:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+        group: DEFAULT_GROUP
+#        ephemeral: false #永久节点
+
+# 采用配置文件，指定负载均衡的策略
+# 被调用的微服务名
+stock-nacos:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
