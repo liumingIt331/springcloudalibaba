@@ -6,7 +6,8 @@ spring:
     name: order-nacos
   cloud:
     nacos:
-      server-addr: 10.10.10.176:8848
+#      server-addr: 10.10.10.176:8848
+      server-addr: localhost:8848
       discovery:
         username: nacos
         password: nacos
@@ -19,3 +20,10 @@ spring:
 stock-nacos:
   ribbon:
     NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+
+# Ribbon 默认是懒加载，只有在调用的时候才会创建客户端
+# 避免第一次调用慢，超时等情况，开启饥饿加载，启动完毕后进行加载
+ribbon:
+  eager-load:
+    enabled: true
+    clients: stock-nacos

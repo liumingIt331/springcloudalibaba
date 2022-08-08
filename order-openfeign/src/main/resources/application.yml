@@ -1,0 +1,45 @@
+server:
+  port: 8040
+
+spring:
+  application:
+    name: order-openfeign
+  cloud:
+    nacos:
+      #      server-addr: 10.10.10.176:8848
+      server-addr: localhost:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+        group: DEFAULT_GROUP
+#        ephemeral: false #永久节点
+
+#日志级别设置成debug，才会打印feign日志
+logging:
+  level:
+    com.liuming.order.feign: debug
+
+
+ribbon:
+  eager-load:
+    enabled: true
+    clients: stock-nacos,product-service
+# 按对应微服务配置超时时间
+feign:
+  client:
+    config:
+      product-service:
+        #连接超时时间 默认2s
+        connectTimeout: 3000
+        #读取超时时间 默认5s
+        readTimeout: 6000
+      stock-nacos:
+        connectTimeout: 3000
+        readTimeout: 6000
+  #集成Apache的HttpClient
+  httpclient:
+    enabled: true
+  #集成OkHttp
+#  okhttp:
+#    enabled: true

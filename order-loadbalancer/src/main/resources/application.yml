@@ -1,9 +1,9 @@
 server:
-  port: 8021
+  port: 8030
 
 spring:
   application:
-    name: stock-nacos
+    name: order-loadbalancer
   cloud:
     nacos:
 #      server-addr: 10.10.10.176:8848
@@ -13,4 +13,4 @@ spring:
         password: nacos
         namespace: public
         group: DEFAULT_GROUP
-      #        ephemeral: false #永久节点
+#        ephemeral: false #永久节点

@@ -7,6 +7,10 @@
         <module>store</module>
         <module>order-nacos</module>
         <module>stock-nacos</module>
+        <module>order-loadbalancer</module>
+        <module>order-openfeign</module>
+        <module>product-service</module>
+        <module>product-api</module>
     </modules>
 
     <groupId>com.liuming</groupId>
