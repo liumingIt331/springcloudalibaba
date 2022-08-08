@@ -6,8 +6,8 @@ spring:
     name: product-service
   cloud:
     nacos:
-#      server-addr: 10.10.10.176:8848
-      server-addr: localhost:8848
+      server-addr: 10.10.10.176:8848
+#      server-addr: localhost:8848
       discovery:
         username: nacos
         password: nacos

@@ -11,6 +11,7 @@
         <module>order-openfeign</module>
         <module>product-service</module>
         <module>product-api</module>
+        <module>config-nacos</module>
     </modules>
 
     <groupId>com.liuming</groupId>
