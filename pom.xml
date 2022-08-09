@@ -10,7 +10,6 @@
         <module>order-loadbalancer</module>
         <module>order-openfeign</module>
         <module>product-service</module>
-        <module>product-api</module>
         <module>config-nacos</module>
     </modules>
 
@@ -60,6 +59,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.3.12.RELEASE</version>
             </plugin>
         </plugins>
     </build>

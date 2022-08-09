@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class StockApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(com.liuming.stock.StockApplication.class, args);
+        SpringApplication.run(StockApplication.class, args);
     }
 }
