@@ -1,0 +1,8 @@
+server:
+  port: 8050
+
+#${prefix} - ${spring.profiles.active} . ${file-extension}
+#指定含profile的配置文件 config-nacos-dev.yml  dataId必须带后缀yml
+spring:
+  profiles:
+    active: dev

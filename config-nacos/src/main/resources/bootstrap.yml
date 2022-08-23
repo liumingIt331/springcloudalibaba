@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        #配置nacos配置中心地址
+        server-addr: 10.10.10.176:8848
+        #指定文件扩展名 默认properties
+        #file-extension只针对默认的配置文件
+        file-extension: yml
+        #指定命名空间  需要指定id，指定名称dev无效
+        namespace: aa9a9d78-715a-4dc5-9afd-9cea42e0a4ff
+        group: DEFAULT_GROUP
+        #共享配置文件
+        shared-configs:
+          - dataId: common-config.yml
+            refresh: true
+  #默认读取的文件名即DataId为服务名称，properties文件可以省略后缀
+  application:
+    name: config-nacos
+
+#优先级
+#profiles > 默认配置文件 > share-configs(共享配置文件，若有多个，按下标最后一个优先级高)
+#${prefix} - ${spring.profiles.active} . ${file-extension}
