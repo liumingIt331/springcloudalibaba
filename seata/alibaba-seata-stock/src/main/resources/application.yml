@@ -1,0 +1,42 @@
+server:
+  port: 8102
+#  servlet:
+#    context-path: /alibaba-seata-stock
+
+spring:
+  application:
+    name: alibaba-seata-stock
+  cloud:
+    nacos:
+      server-addr: 10.10.10.176:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+        group: DEFAULT_GROUP
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://10.10.10.180:3306/seata_busin
+    username: root #数据库用户名
+    password: iHe!5@iW #数据库密码
+    type: com.zaxxer.hikari.HikariDataSource
+
+#分布式事务seata的配置
+seata:
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: 10.10.10.176:8848
+      group: SEATA_GROUP
+      username: nacos
+      password: nacos
+  config:
+    type: nacos
+    nacos:
+      server-addr: 10.10.10.176:8848
+      group: SEATA_GROUP
+      username: nacos
+      password: nacos
+  #    事务的分组配置
+  tx-service-group: wuhan

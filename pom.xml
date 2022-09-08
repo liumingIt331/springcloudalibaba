@@ -12,6 +12,7 @@
         <module>product-service</module>
         <module>demo-sentinel</module>
         <module>config-nacos</module>
+        <module>seata</module>
     </modules>
 
     <groupId>com.liuming</groupId>
